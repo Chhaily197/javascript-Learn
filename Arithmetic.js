@@ -31,7 +31,7 @@ function Modulus(){
 }
 
 function Increment(){
-    var result = a--;
+    var result = a++;
     return `Increment: ${a} = ` + result;
 }
 
