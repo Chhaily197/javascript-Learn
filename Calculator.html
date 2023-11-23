@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      form {
+        width: 400px;
+        border: 1px solid blue;
+        border-radius: 5px;
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      form h2 {
+        color: blue;
+        font-family: sans-serif;
+        font-weight: bold;
+        text-shadow: 0 0 2px blue;
+      }
+      .group-form {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .group-form label {
+        font-size: 21px;
+        font-weight: bold;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .group-form input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+      }
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 2px;
+        padding: 5px;
+      }
+      .btn button {
+        width: 50px;
+      }
+      .btn button {
+        position: relative;
+        left: 10px;
+        top: 0;
+        background-color: blue;
+        border: none;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        border-radius: 5px;
+        box-shadow: 1px 2px 2px blue;
+      }
+      .btn button:active{
+        background-color: gray;
+      }
+      .result {
+        width: 100%;
+      }
+      .result h3 {
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <h2>Calculator</h2>
+      <div class="group-form">
+        <label for="1st">1st Number</label>
+        <input type="number" id="num1" name="num1"/>
+      </div>
+      <div class="group-form">
+        <label for="1st">2nd Number</label>
+        <input type="number" id="num2" name="num2"/>
+      </div>
+      <div class="btn">
+        <button type="button" onclick="add()">+</button>
+        <button type="button" onclick="subtract()">-</button>
+        <button type="button" onclick="multi()">x</button>
+        <button type="button" onclick="divide()">/</button>
+      </div>
+      <div class="result">
+        <h3>
+          This Results:
+          <h4 id="result"></h4>
+        </h3>
+      </div>
+    </form>
+
+    <script>
+        function add() {
+            var value1 = parseFloat(document.getElementById("num1").value);
+            var value2 = parseFloat(document.getElementById("num2").value);
+            var result = value1 + value2;
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function subtract(){
+            var value1 = parseFloat(document.getElementById("num1").value);
+            var value2 = parseFloat(document.getElementById("num2").value);
+            var result = value1 - value2;
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function multi(){
+            var value1 = parseFloat(document.getElementById("num1").value);
+            var value2 = parseFloat(document.getElementById("num2").value);
+            var result = value1 * value2;
+            document.getElementById("result").innerHTML = result;
+        }
+
+        function divide(){
+            var value1 = parseFloat(document.getElementById("num1").value);
+            var value2 = parseFloat(document.getElementById("num2").value);
+            var result = value1 / value2;
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+  </body>
+</html>
