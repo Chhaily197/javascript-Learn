@@ -28,8 +28,8 @@ body{
     cursor: pointer;
     border: 2px solid #333;
     display: flex;
-    align-content: center;
     justify-content: center;
+    align-items: center;
 }
 .cell:hover{
     background-color: #f0f0f0;
