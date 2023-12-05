@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Book 1",
+    "image": "book1.jpg",
+    "price": 19.99,
+    "description": "Description for Book 1",
+    "author": "Author 1",
+    "genre": "Fiction"
+  },
+  {
+    "id": 2,
+    "name": "Book 2",
+    "image": "book2.jpg",
+    "price": 29.99,
+    "description": "Description for Book 2",
+    "author": "Author 2",
+    "genre": "Non-Fiction"
+  }
+]

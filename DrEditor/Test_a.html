@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: gray;
+        }
+        #droptarget{
+            width: 250px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML DOM Events</h1>
+    <h1>The ondragover Event</h1>
+
+    <p class="box" ondragstart="dragStart(event)" draggable="true" id="dragtarget">hello</p>
+
+    <div id="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <p id="demo"></p>
+
+    <script>
+        function dragStart(event){
+            event.dataTransfer.setData("Text", event.target.id);
+        }
+
+        function allowDrop(event){
+            event.preventDefault();
+            document.getElementById('demo').innerHTML = "The box is OVER the droptarget";
+            event.target.style.border = '4px dotted green';
+        }
+
+        function drop(event){
+            event.preventDefault();
+            const data = event.dataTransfer.getData("Text");
+            event.target.appendChild(document.getElementById(data));
+            document.getElementById('demo').innerHTML = "The box was dropped";
+        }
+    </script>
+</body>
+</html>

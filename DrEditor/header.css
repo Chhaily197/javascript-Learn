@@ -1,0 +1,86 @@
+:root{
+    --color: '#fff',
+}
+header{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+nav{
+    background-color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:12px;
+    padding: 15px;
+}
+.header_nav{
+    color: #fff;
+    font-size: 21px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto 5px;
+}
+
+section{
+    position: relative;
+    top:40px;
+    z-index: 0;
+    padding:20px;
+    flex-grow: 1;
+    display: grid;
+    justify-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.slidebar-left{
+    position: fixed;
+    background-color: #eee;
+    padding: 10px;
+    width: 20%;
+    display: none;
+    flex-shrink: 0;
+}
+.center{
+    width: 60%;
+    background-color: #fff;
+    flex-grow: 1;
+    padding: 10px;
+    display: grid;
+    gap:10px;
+    overflow-y: auto;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    height: 100vh;
+}
+.draggable{
+    margin: 5px 0;
+    padding: 8px;
+    background-color: rgba(163, 151, 151, 0.31);
+    color:#fff;
+    cursor: move;
+}
+
+.draggable.dragging{
+    opacity: 0.5;
+    cursor: grabbing;
+}
+.slidebar-right{
+    position: fixed;
+    background-color: #eee;
+    padding: 10px;
+    width: 20%;
+    display: none;
+    flex-shrink: 0;
+}
+.customizeElement-form{
+    display: flex;
+    flex-direction: column;
+}
+.customization-form label {
+    margin-bottom: 5px;
+}
+
+.customization-form input {
+    margin-bottom: 10px;
+}
+
