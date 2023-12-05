@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .droptarget{
+            width: 100px;
+            height: 30px;
+            padding:5px;
+            background-color: rgba(128, 128, 128, 0.534);
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Frag Event</h1>
+    <div class="droptarget">
+        <p class="box" draggable="true" id="droptarget">Box</p>
+    </div>
+    <p>Drag the text up and down between the twon rectangles</p>
+    <div class="droptarget"></div>
+
+    <p id="demo"></p>
+
+    <script>
+        document.addEventListener("dragstart", function(e) {
+            e.dataTransfer.setData("Text", e.target.id);
+
+            document.getElementById('demo').innerHTML = "Started to draf the box element";
+            e.target.style.opacity = "0.4";
+        });
+
+        document.addEventListener("drag", (e) => {
+            document.getElementById('demo').style.color = 'red';
+        });
+
+        document.addEventListener("dragend", (e) => {
+            document.getElementById('demo').innerHTML = "Finish dragging the p element";
+            e.target.style.opacity = "1";
+        })
+
+        document.addEventListener("dragenter", (e) => {
+            if(e.target.className == "droptarget"){
+                e.target.style.border = "3px dotted red";
+            }
+        });
+
+        document.addEventListener("dragover", (e) => {
+            e.preventDefault();
+        });
+
+        document.addEventListener("dragleave", (e) => {
+            if(e.target.className == "droptarget"){
+                e.target.style.border = "";   
+            }
+        });
+
+        document.addEventListener("drop", (e) => {
+            e.preventDefault();
+            if(e.target.className == 'droptarget');
+            document.getElementById("demo").style.color = "";
+            e.target.style.border = '';
+            var data = e.dataTransfer.getData("Text");
+            e.target.appendChild(document.getElementById(data));
+        })
+    </script>
+</body>
+</html>
