@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HTML DOM Events</h1>
+    <h2>The ondurationchange Event</h2>
+
+    <video controls ondurationchange="myFunction()">
+        <source src="./asitwas.mp4" type="video/mp4">
+        <source src="./asitwas.ogg" type="video/ogg">
+        Your broser does not support video playback.
+    </video>
+
+    <p id="demo">Event has fired: </p>
+
+    <p> Video curtesy of <a href="https://www.google.com" target="_blank">Big Bunk Bunny</a></p>
+
+    <script>
+        function myFunction(){
+            document.getElementById('demo').innerHTML += "Duration has changed";
+        }
+    </script>
+</body>
+</html>
